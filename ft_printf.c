@@ -6,7 +6,7 @@
 /*   By: rtruvelo <rtruvelo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 11:17:12 by rtruvelo          #+#    #+#             */
-/*   Updated: 2023/11/23 17:10:24 by rtruvelo         ###   ########.fr       */
+/*   Updated: 2023/11/24 10:49:58 by rtruvelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ int ft_print_format(va_list ap, int c)
     else if (c == 'x' || c == 'X')
 		print_len += ft_print_hexa(va_arg(ap, char),c);
     return (print_len);
-        
+
 }
 
 int ft_printf(const char *s, ...)
