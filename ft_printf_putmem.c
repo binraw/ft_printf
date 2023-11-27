@@ -1,33 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf_str.c                                    :+:      :+:    :+:   */
+/*   ft_printf_putmem.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rtruvelo <rtruvelo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/23 15:36:54 by rtruvelo          #+#    #+#             */
-/*   Updated: 2023/11/27 15:23:59 by rtruvelo         ###   ########.fr       */
+/*   Created: 2023/11/27 15:45:03 by rtruvelo          #+#    #+#             */
+/*   Updated: 2023/11/27 15:50:43 by rtruvelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-
-
-int ft_printf_str(char *str)
+int	ft_printf_putmem(int n)
 {
-    write(1, str, ft_strlen(str));
-    return (ft_strlen(str));
+	const char str[] = "0123456789abcdef";
+    int     i;
+
+    i = 0;
+	if (n >= 16)
+	{
+		ft_printf_putmem(n / 16);
+		ft_printf_putmem(n % 16);
+	}
+	else
+	{
+        if(i == 0)
+        {
+            write(1, "0x", 1);
+            i = 2;
+        }
+        
+        write(1, &str[n], 1);
+        i++;
+        
+	}
+	return (i);
 }
-
-// size_t ft_strlen(char *str)
-// {
-//     size_t  i;
-
-//     i = 0;
-//     while (str[i])
-//     {
-//         i++;
-//     }
-//     return (i);
-//}

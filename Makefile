@@ -9,6 +9,8 @@ SRCS =  ft_printf.c \
                 ft_printf_hexa.c \
                 ft_printf_num.c \
                 ft_printf_str.c \
+				ft_printf_char.c \
+				ft_printf_putmem.c 
 
 OBJS = $(SRCS:.c=.o)
 
