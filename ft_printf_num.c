@@ -1,33 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_str.c                                     :+:      :+:    :+:   */
+/*   ft_printf_num.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rtruvelo <rtruvelo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/23 15:36:54 by rtruvelo          #+#    #+#             */
-/*   Updated: 2023/11/24 15:01:06 by rtruvelo         ###   ########.fr       */
+/*   Created: 2023/11/23 15:52:03 by rtruvelo          #+#    #+#             */
+/*   Updated: 2023/11/27 14:13:56 by rtruvelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+
+
 #include "ft_printf.h"
 
-
-
-int ft_print_str(char *str)
+int 	ft_print_num(int n)
 {
-    write(1, str, ft_strlen(str));
-    return (ft_strlen(str));
+	int	number;
+	char	*str;
+
+	number = 0;
+	str = ft_itoa(n);
+	ft_print_str(str);
+	free(str);
+	return (number);
 }
-
-// size_t ft_strlen(char *str)
-// {
-//     size_t  i;
-
-//     i = 0;
-//     while (str[i])
-//     {
-//         i++;
-//     }
-//     return (i);
-//}

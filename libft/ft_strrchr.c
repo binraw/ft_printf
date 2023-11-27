@@ -6,7 +6,7 @@
 /*   By: rtruvelo <rtruvelo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 09:36:15 by rtruvelo          #+#    #+#             */
-/*   Updated: 2023/11/23 09:35:31 by rtruvelo         ###   ########.fr       */
+/*   Updated: 2023/11/27 14:13:07 by rtruvelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ char	*ft_strrchr(const char *string, int searchedChar)
 	p = (char *)string;
 	search = (char) searchedChar;
 	i = ft_strlen(p);
-	while (i >= 0)
+	while (i > 0)
 	{
 		if (p[i] == search)
 		{

@@ -6,7 +6,7 @@
 /*   By: rtruvelo <rtruvelo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 11:17:12 by rtruvelo          #+#    #+#             */
-/*   Updated: 2023/11/24 15:55:48 by rtruvelo         ###   ########.fr       */
+/*   Updated: 2023/11/27 14:13:46 by rtruvelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,9 +34,9 @@ int ft_print_format(va_list ap, int c)
     else if (c == 'u')
         print_len += ft_print_num(va_arg(ap, unsigned int));
     else if (c == '%')
-        print_len += write(1, '%', 1);
+        print_len += write(1, "%", 1);
     else if (c == 'p')
-        print_len += ft_print_hexa(va_arg(ap, char), c);
+        print_len += ft_print_hexa(va_arg(ap, int), c);
     return (print_len);
 
 }
@@ -69,8 +69,8 @@ int ft_printf(const char *s, ...)
     return (i);
 }
 
-int main(void)
-{
-    ft_printf("%x",12000000000);
-//     printf("%x",12000000000);
-}
+// int main(void)
+// {
+//     ft_printf("%d",1200);
+// //     printf("%x",12000000000);
+// }

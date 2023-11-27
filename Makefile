@@ -1,33 +1,38 @@
-SOURCES =
 
+NAME = libftprintf.a
+LIBFTNAME = libft.a
+CC = cc
+CFLAGS = -Wall -Werror -Wextra -g3
+LIBFTDIR = ./libft
 
-BONUS = 
+SRCS =  ft_printf.c \
+                ft_printf_hexa.c \
+                ft_printf_num.c \
+                ft_printf_str.c \
 
-
-CFLAGS = -Wall -Wextra -Werror
-LIB= libft.h
-OBJ = $(SOURCES:.c=.o)
-OBJ_BONUS = $(BONUS:.c=.o)
-OBJ_ALL = $(OBJ) $(OBJ_BONUS)
-NAME = libftprintf.a 
-
-%.o: %.c libft.h
-		$(CC) $(CFLAGS) -c $< -o $(<:.c=.o)
+OBJS = $(SRCS:.c=.o)
 
 all: $(NAME)
 
+makelibft:
+	@make -C $(LIBFTDIR)
+	@cp $(LIBFTDIR)/$(LIBFTNAME) .
+	@mv $(LIBFTNAME) $(NAME)
 
-$(NAME): $(OBJ) $(LIB)
-		$(AR) -rcs $(NAME) $(OBJ)
+$(NAME): makelibft $(OBJS)
+	@ar -r $(NAME) $(OBJS)
 
-bonus:
-	$(MAKE) $(NAME) SOURCES="$(SOURCES) $(BONUS)"
 clean:
-		$(RM) $(OBJ) $(OBJ_BONUS)
+	@rm -f $(OBJS)
+	@cd $(LIBFTDIR) && make clean
 
 fclean: clean
-		$(RM) $(NAME)
+	@rm -f $(NAME)
+	@cd $(LIBFTDIR) && make fclean
 
-re: fclean $(NAME)
+compil: 
+	cc ft_printf.c ft_unsigned_putnbr_fd.c ft_printf_hexa.c ft_printf_hexa_ptr.c ./libft/*.c
 
-.PHONY: all clean fclean re bonus
+re: fclean all compil
+
+.PHONY:                         all bonus clean fclean re compil

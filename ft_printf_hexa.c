@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_hexa.c                                    :+:      :+:    :+:   */
+/*   ft_printf_hexa.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rtruvelo <rtruvelo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 16:51:51 by rtruvelo          #+#    #+#             */
-/*   Updated: 2023/11/24 15:14:38 by rtruvelo         ###   ########.fr       */
+/*   Updated: 2023/11/27 14:13:52 by rtruvelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,9 @@ int	ft_print_hexa(int n, char format)
 	}
 	else
 	{
-		if (format == 'x');
+		if (format == 'x')
 		result += ft_print_num(str[n]);
-		if (format == 'X');
+		if (format == 'X')
 		result += ft_print_num(maj[n]);
 		// if (format == 'p')
 		// ft_print_num("0x" + str[n]);
