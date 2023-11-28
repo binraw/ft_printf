@@ -6,36 +6,39 @@
 /*   By: rtruvelo <rtruvelo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 16:51:51 by rtruvelo          #+#    #+#             */
-/*   Updated: 2023/11/27 15:42:59 by rtruvelo         ###   ########.fr       */
+/*   Updated: 2023/11/28 11:40:56 by rtruvelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
 #include "ft_printf.h"
 
-int	ft_printf_hexa(int n, char format)
+int	ft_printf_hexa(unsigned int n, char format)
 {
 	const char str[] = "0123456789abcdef";
 	const char maj[] = "0123456789ABCDEF";
+	
 	int result;
 
 	result = 0;
+
+	
 	if (n >= 16)
 	{
-		ft_printf_hexa(n / 16, format);
-		ft_printf_hexa(n % 16 , format);
+		result += ft_printf_hexa(n / 16, format);
+		result += ft_printf_hexa(n % 16 , format);
 	}
 	else
 	{
 		if (format == 'x')
 		{
-		result += 1;
 		write(1, &str[n], 1);
+		result++;	
 		}
 		if (format == 'X')
 		{
-		result += 1;
 		write(1, &maj[n], 1);
+		result++;
 		}
 	}
 	return (result);

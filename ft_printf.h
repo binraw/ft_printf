@@ -15,7 +15,7 @@
 
 
 
-int	ft_printf_hexa(int n, char format);
+int	ft_printf_hexa(unsigned int n, char format);
 int ft_printf_format(va_list ap, int c);
 int ft_printf(const char *s, ...);
 int ft_printf_str(char *str);
@@ -24,7 +24,8 @@ char	*ft_itoa(int n);
 size_t	ft_strlen(const char *str);
 char	*ft_strdup(const char *source);
 int ft_printf_char(int c);
-int	ft_printf_putmem(int n);
+unsigned long int	ft_printf_putmem(unsigned long int n, int count);
+unsigned int  	ft_printf_num_unsigned(unsigned int n);
 
 
 

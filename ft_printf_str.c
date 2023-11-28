@@ -6,7 +6,7 @@
 /*   By: rtruvelo <rtruvelo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 15:36:54 by rtruvelo          #+#    #+#             */
-/*   Updated: 2023/11/27 15:23:59 by rtruvelo         ###   ########.fr       */
+/*   Updated: 2023/11/28 09:58:30 by rtruvelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,11 @@
 
 int ft_printf_str(char *str)
 {
+    if (!str)
+    {
+        write(1,"(null)",6);
+        return (6);
+    }
     write(1, str, ft_strlen(str));
     return (ft_strlen(str));
 }
