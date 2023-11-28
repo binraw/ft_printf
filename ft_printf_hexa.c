@@ -6,10 +6,9 @@
 /*   By: rtruvelo <rtruvelo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 16:51:51 by rtruvelo          #+#    #+#             */
-/*   Updated: 2023/11/28 11:40:56 by rtruvelo         ###   ########.fr       */
+/*   Updated: 2023/11/28 13:36:29 by rtruvelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 #include "ft_printf.h"
 
@@ -21,8 +20,6 @@ int	ft_printf_hexa(unsigned int n, char format)
 	int result;
 
 	result = 0;
-
-	
 	if (n >= 16)
 	{
 		result += ft_printf_hexa(n / 16, format);
@@ -43,10 +40,3 @@ int	ft_printf_hexa(unsigned int n, char format)
 	}
 	return (result);
 }
-
-// int main(void)
-// {
-// 	// printf("%d\n", ft_print_hexa(10));
-// 	ft_print_hexa(110,'X');
-// 	write(1, "\n",1);
-// }

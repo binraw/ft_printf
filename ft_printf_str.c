@@ -6,7 +6,7 @@
 /*   By: rtruvelo <rtruvelo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 15:36:54 by rtruvelo          #+#    #+#             */
-/*   Updated: 2023/11/28 09:58:30 by rtruvelo         ###   ########.fr       */
+/*   Updated: 2023/11/28 13:37:11 by rtruvelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,14 +25,3 @@ int ft_printf_str(char *str)
     return (ft_strlen(str));
 }
 
-// size_t ft_strlen(char *str)
-// {
-//     size_t  i;
-
-//     i = 0;
-//     while (str[i])
-//     {
-//         i++;
-//     }
-//     return (i);
-//}

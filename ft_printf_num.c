@@ -6,7 +6,7 @@
 /*   By: rtruvelo <rtruvelo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 15:52:03 by rtruvelo          #+#    #+#             */
-/*   Updated: 2023/11/28 10:49:40 by rtruvelo         ###   ########.fr       */
+/*   Updated: 2023/11/28 13:36:57 by rtruvelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,18 +18,6 @@
 static size_t	ft_int_len(int number);
 void	ft_putnbr_unsigned_fd(unsigned int n, int fd);
 static size_t	ft_unsigned_int_len(unsigned int number);
-// int 	ft_printf_num(int n)
-// {
-// 	int	number;
-// 	char	*str;
-
-// 	number = 0;
-// 	str = ft_itoa(n);
-// 	ft_printf_str(str);
-// 	number = ft_strlen(str);
-// 	free(str);
-// 	return (number);
-// }
 
 int 	ft_printf_num(int n)
 {
@@ -116,11 +104,3 @@ static size_t	ft_int_len(int number)
 		y++;
 	return (y);
 }
-
-// #include <stdio.h>
-// int main(void)
-// {
-// 	// printf("%d\n", ft_print_hexa(10));
-// 	printf("%d", ft_print_num(-11000));
-// 	write(1, "\n",1);
-// }

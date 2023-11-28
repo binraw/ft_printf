@@ -6,7 +6,7 @@
 /*   By: rtruvelo <rtruvelo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/27 15:45:03 by rtruvelo          #+#    #+#             */
-/*   Updated: 2023/11/28 13:27:57 by rtruvelo         ###   ########.fr       */
+/*   Updated: 2023/11/28 13:37:02 by rtruvelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,6 @@ unsigned long int	ft_printf_putmem(unsigned long int n , int count)
 	{   
         write(1, &str[n], 1);
         i++;
-        
 	}
 	return (i);
 }
