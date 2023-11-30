@@ -6,14 +6,14 @@
 /*   By: rtruvelo <rtruvelo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/27 15:17:04 by rtruvelo          #+#    #+#             */
-/*   Updated: 2023/11/27 15:31:35 by rtruvelo         ###   ########.fr       */
+/*   Updated: 2023/11/30 12:55:40 by rtruvelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int ft_printf_char(int c)
+int	ft_printf_char(int c)
 {
-    write(1, &c, 1);
-    return (1);
+	write(1, &c, 1);
+	return (1);
 }

@@ -1,15 +1,27 @@
-# ifndef FT_PRINT_H
-# define FT_PRINT_H
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rtruvelo <rtruvelo@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/11/30 12:52:25 by rtruvelo          #+#    #+#             */
+/*   Updated: 2023/11/30 12:54:39 by rtruvelo         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#ifndef FT_PRINTF_H
+# define FT_PRINTF_H
 
 # include <stddef.h>
 # include <stdint.h>
 # include <stdlib.h>
 # include <unistd.h>
-#include <stdarg.h>
-#include <stdlib.h>
-#include <stdarg.h>
-#include <stdlib.h>
-#include "libft/libft.h"
+# include <stdarg.h>
+# include <stdlib.h>
+# include <stdarg.h>
+# include <stdlib.h>
+# include "libft/libft.h"
 
 int					ft_printf_hexa(unsigned int n, char format);
 int					ft_printf_format(va_list ap, int c);
@@ -20,4 +32,4 @@ int					ft_printf_char(int c);
 unsigned long int	ft_printf_putmem(unsigned long int n, int count);
 unsigned int		ft_printf_num_unsigned(unsigned int n);
 
-# endif
+#endif
