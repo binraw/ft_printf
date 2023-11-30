@@ -6,7 +6,7 @@
 /*   By: rtruvelo <rtruvelo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 11:17:12 by rtruvelo          #+#    #+#             */
-/*   Updated: 2023/11/28 13:47:21 by rtruvelo         ###   ########.fr       */
+/*   Updated: 2023/11/30 12:26:19 by rtruvelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,11 @@ int	ft_printf_format(va_list ap, int c)
 		print_len += write(1, "%", 1);
 	else if (c == 'p')
 		print_len += ft_printf_putmem(va_arg(ap, unsigned long int), count);
+	else 
+	{
+		print_len += write(1,"%", 1);
+		print_len += write(1, &c, 1);
+	}
 	return (print_len);
 }
 
@@ -51,14 +56,14 @@ int	ft_printf(const char *s, ...)
 	{
 		if (s[i] == '%')
 		{
+			if (s[i + 1] == '\0')
+				return (-1);
 			print_len += ft_printf_format(ap, s[i + 1]);
 			i = i + 2;
 		}
 		else
-		{
-			print_len += write(1, &s[i], 1);
-			i++;
-		}
+			print_len += write(1, &s[i++], 1);
+
 	}
 	va_end(ap);
 	return (print_len);
@@ -67,6 +72,7 @@ int	ft_printf(const char *s, ...)
 // #include <stdio.h>
 // int main(void)
 // {
-//     printf("%d\n", printf("%d\n", NULL));
-//     printf("%d\n", ft_printf("%d\n", NULL));
+// 	char str[] = "bonjour";
+//     // printf("%d\n", printf("% %d %s", 10,str));
+//     printf("%d\n", ft_printf("%", 10, str));
 // }
